@@ -5,7 +5,7 @@ inquirer
   .prompt([
     {
       type: "input",
-      message: "What is your user name?",
+      message: "What ",
       name: "username"
     },
 
