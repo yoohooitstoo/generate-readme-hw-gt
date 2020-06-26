@@ -1,7 +1,8 @@
 // array of questions for user
 const fs = require("fs");
 const inquirer =  require('inquirer');
-const genrateMarkdown = require("./utils/generateMarkdown.js")
+const genrateMarkdown = require("./utils/generateMarkdown.js");
+const Choices = require("inquirer/lib/objects/choices");
 
 //
 const questions = [{
@@ -16,7 +17,7 @@ const questions = [{
     },
     {
       type: "input",
-      message: "What are the steps required to install your project?",
+      message: "Whteps required to install your project?",
       name: "installation"
     },
     {
@@ -30,9 +31,16 @@ const questions = [{
       name: "credit"
     },
     {
-      type: "confirm",
+      type: "list",
       message: "Would like to include a license?",
-      name: "license"
+      name: "license",
+      choices: [{
+          name:"MIT License",
+          value: {
+              badge:"[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+              description:"",
+          }
+      }]
     },
     {
       type: "input",
@@ -41,31 +49,35 @@ const questions = [{
     },
     {
       type: "input",
-      message: "",
+      message: "How does someone ",
       name: "tests"
     },
+    {
+        type: "input",
+        message: "Please include your GitHub email.",
+        name: "email"
+      },
 ];
 
-inquirer.prompt((questions)).then((answers) => {
+inquirer.prompt(questions).then(answers => {
     console.log(answers);
-    fs.writeFile("newREADME.md", answers), function(err) {
+    fs.writeFile("newREADME.md", genrateMarkdown(answers), function(err) {
         
        if (err) {
          return console.log(err);
-       }else {
-           console.log("Succcess")
        }
-    }
-       });
+       console.log("success")
+    })
+    });
 // function to write README file
-function writeToFile(newReadMe, data) {
-}
+// function writeToFile(newReadMe, data) {
+// }
 
-// function to initialize program
-function init() {
+// // function to initialize program
+// function init() {
 
 
-}
+// }
 
-// function call to initialize program
-init();
+// // function call to initialize program
+// init();
