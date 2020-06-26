@@ -1,5 +1,4 @@
 // function to generate markdown for README
-
 function generateMarkdown(answers) {
   return `# ${answers.title}
 
@@ -49,5 +48,5 @@ To see the additional work that I have done please visit me at http://gitgub.com
 ${answers.license.description}
 `;
 }
-
+// module.exports is an object we use to store variables or methods
 module.exports = generateMarkdown;

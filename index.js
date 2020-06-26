@@ -1,9 +1,11 @@
-// array of questions for user
+// fs is a Node standard library package for reading and writing files
 const fs = require("fs");
+//This allows for us to use the inquirer package
 const inquirer = require("inquirer");
+//This allows us to connect the two js files together
 const genrateMarkdown = require("./utils/generateMarkdown.js");
 
-//
+//The questions that we want to prompt the user with
 const questions = [
   {
     type: "input",
@@ -76,7 +78,8 @@ const questions = [
     name: "email",
   },
 ];
-
+// Using the inquirer package method to capture the answers from the questions 
+// adding them to the generateMarkdwon.js and creating a newREADME.md with the correct information
 inquirer.prompt(questions).then((answers) => {
   
   fs.writeFile("newREADME.md", genrateMarkdown(answers), function (err) {
