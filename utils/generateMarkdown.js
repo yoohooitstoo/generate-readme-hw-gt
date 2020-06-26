@@ -25,11 +25,11 @@ function generateMarkdown(data) {
   ## License
   ${data.license}
   ## Contributing
-  ${data.contribution}
+  ${data.contributions}
   ## Tests
   ${data.tests}
   ##Questions
-  If you have any question or suggestion, please you can reach by sending email
+  If you have any question or suggestion, please you can reach by sending email to
 `;
 }
 
