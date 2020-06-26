@@ -1,57 +1,53 @@
 // function to generate markdown for README
 
 function generateMarkdown(answers) {
-  return `# ${answers.title} 
+  return `# ${answers.title}
 
-  ${answers.license.badge}
- 
-  
-  ## Description
-  ${answers.description}
+${answers.license.badge}
 
-  ## Table of Contents (Optional)
+## Description
 
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [Credits](#credits)
-  * [License](#license)
-  * [Contributing](#contributing)
-  * [Tests](#tests)
-  * [Questions](#questions)
+${answers.description}
 
-  ## Installation
+## Table of Contents (Optional)
 
-  ${answers.installation}
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+* [License](#license)
 
-  ## Usage 
+## Installation
 
-  ${answers.usage}
+${answers.installation}
 
-  ## Credits
+## Usage
 
-  ${answers.credit}
+${answers.usage}
 
-  ## License
+## Credits
 
-  ${answers.license.description}
+${answers.credit}
 
-  ## Contributing
+## Contributing
 
-  ${answers.contributions}
+${answers.contributions}
 
-  ## Tests
+## Tests
 
-  ${answers.tests}
+${answers.tests}
 
-  ## Questions
+## Questions
 
-  If you have any question or suggestion, please you can reach by sending email to ${answers.email}. 
-  To see the additional work that I have done please visit me at http://gitgub.com/${answers.username}.
+If you have any question or suggestion, please you can reach by sending email to ${answers.email}.
+To see the additional work that I have done please visit me at http://gitgub.com/${answers.username}.
+
+## License
+
+${answers.license.description}
 `;
 }
 
 module.exports = generateMarkdown;
-
-
-
-
