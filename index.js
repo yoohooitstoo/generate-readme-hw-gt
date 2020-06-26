@@ -46,18 +46,24 @@ const questions = [{
     },
 ];
 
+inquirer.prompt((questions)).then((answers) => {
+    console.log(answers);
+    fs.writeFile("newREADME.md", answers), function(err) {
+        
+       if (err) {
+         return console.log(err);
+       }else {
+           console.log("Succcess")
+       }
+    }
+       });
 // function to write README file
 function writeToFile(newReadMe, data) {
 }
- fs.writeFile("newREADME.md", JSON.stringify(data, null, '\t'), function(err) {
 
-    if (err) {
-      return console.log(err);
-    }
- });
 // function to initialize program
 function init() {
-    inquirer.prompt((questions)).then(response) =>
+
 
 }
 
